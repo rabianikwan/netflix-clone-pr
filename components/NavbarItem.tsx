@@ -9,7 +9,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({label}) => {
         <div className="
         text-white
         cursor-pointer
-        hover:text-gray-300
+        hover:text-red-500
         transition">
             {label}
         </div>
