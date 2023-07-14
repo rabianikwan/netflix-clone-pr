@@ -1,15 +1,14 @@
 import {getSession, signOut} from "next-auth/react";
 import {NextPageContext} from "next";
+import useCurrentUser from "@/hooks/useCurrentUser";
 
 export async function getServerSideProps(context: NextPageContext) {
     const session = await getSession(context);
-
-
     //check if current session is exist if not protect '/' routes
     if(!session) {
         return {
             redirect: {
-                destination : '/auth',
+                destination : '/login',
                 permanent: false
             }
         }
@@ -21,13 +20,17 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 export default function Home() {
-    //protect dashboard route
+    const { data: user} = useCurrentUser();
 
+    //protect dashboard route
   return (
     <div>
       <h1 className="text-white text-4xl">
-          Login Succesfull!!
+          Profil
       </h1>
+        <p className="text-white">
+            Logged in as : { user?.name }
+        </p>
         <button
         className="h-10 w-20 bg-white"
         onClick={() => signOut()}>

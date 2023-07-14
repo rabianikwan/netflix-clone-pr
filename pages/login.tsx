@@ -2,12 +2,11 @@ import Input from "@/components/input";
 import {useCallback, useState} from "react";
 import axios from "axios";
 import { signIn } from 'next-auth/react'
-import { useRouter } from "next/router";
+
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
-const Auth = () => {
-    const router = useRouter();
+const Login = () => {
 
     //set initial state for email, password and username
     const [email, setEmail] = useState('');
@@ -27,14 +26,13 @@ const Auth = () => {
                 email,
                 password,
                 redirect: false,
-                callbackUrl: '/'
+                callbackUrl: '/profiles'
             });
 
-            await router.push('/')
         } catch (e) {
             console.log(e)
         }
-    }, [email, password, router])
+    }, [email, password])
 
     //handler for register
     const register = useCallback(async () => {
@@ -95,7 +93,7 @@ const Auth = () => {
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
                             <div
                                 onClick={() => signIn('google', {
-                                    callbackUrl: '/'
+                                    callbackUrl: '/profiles'
                                 })}
                             className="w-10 h-10 bg-white rounded-full flex items-center justify-center
                             cursor-pointer hover:opacity-80 transition">
@@ -104,7 +102,7 @@ const Auth = () => {
 
                             <div
                                 onClick={() => signIn('github', {
-                                    callbackUrl: '/'
+                                    callbackUrl: '/profiles'
                                 })}
                                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center
                             cursor-pointer hover:opacity-80 transition">
@@ -126,4 +124,4 @@ const Auth = () => {
     )
 }
 
-export default Auth;
+export default Login;
