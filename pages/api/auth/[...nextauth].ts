@@ -49,7 +49,6 @@ export default NextAuth({
                     }
                 }));
 
-
                 // conditional if wrong email has been filled in box
                 if(!user || !user.hashedPassword) {
                     throw new Error("Email is not Exist")
@@ -65,7 +64,6 @@ export default NextAuth({
                 if (!isCorrectPassword) {
                     throw new Error("incorrect password")
                 }
-
                 return user;
             }
         })

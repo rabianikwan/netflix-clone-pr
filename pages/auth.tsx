@@ -52,7 +52,7 @@ const Auth = () => {
 
     // @ts-ignore
     return (
-        <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-center bg-fixed bg-cover">
+        <div className="relative h-full w-full bg-[url('/images/hero.jpeg')] bg-center bg-fixed bg-cover">
             <div className="bg-black w-full h-full lg:bg-opacity-50">
                 <nav className="px-12 py-5">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
