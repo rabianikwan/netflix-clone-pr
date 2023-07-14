@@ -43,7 +43,7 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 ```
 
-in <strong>pages/api/auth/[...nextauth].ts</strong> also
+in <strong>pages/api/auth/[...nextauth].ts</strong> also :
 ```typescript
     providers: [
     GithubProvider({
@@ -56,4 +56,6 @@ in <strong>pages/api/auth/[...nextauth].ts</strong> also
     })
     ]
 ```
+
+and in pages object add `adapter: PrismaAdapter(prismadb)`
 
