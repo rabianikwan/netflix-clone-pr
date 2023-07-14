@@ -18,44 +18,8 @@ Edit login setting in <strong>.env</strong> file, then run migrate:
 npx prisma db push
 ```
 # Custom
-## Add Google & GitHub OATH 
+## Add Google & GitHub AUTH
 
 ![](./screenshot/git&google.png)
 
-install these packages :
-```
-npm install react-icons
-npm install @next-auth/prisma-adapter
-```
-
-import icons and paste in tsx:
-```
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-```
-
-in your .env file should exist :
-```dotenv
-GITHUB_ID=
-GITHUB_SECRET=
-
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-```
-
-in <strong>pages/api/auth/[...nextauth].ts</strong> also :
-```typescript
-    providers: [
-    GithubProvider({
-        clientId: process.env.GITHUB_ID || '',
-        clientSecret: process.env.GITHUB_SECRET || '',
-    }),
-    GoogleProvider({
-        clientId: process.env.GOOGLE_CLIENT_ID || '',
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
-    })
-    ]
-```
-
-and in pages object add `adapter: PrismaAdapter(prismadb)`
 
