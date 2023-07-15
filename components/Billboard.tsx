@@ -1,6 +1,7 @@
 import React from "react";
 import useBillboard from "@/hooks/useBillboard";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { BsFillPlayFill } from "react-icons/bs";
 
 
 const Billboard = () => {
@@ -29,9 +30,9 @@ const Billboard = () => {
                     {data?.title}
                 </p>
                 <p className="text-white
-                text-[1rem]
+                text-[8px]
                 md:text-lg
-                w-full
+                w-[90%]
                 md:mt-8
                 mt-3
                 md:w-[70%]
@@ -41,18 +42,36 @@ const Billboard = () => {
                 </p>
                 <div className="flex flex-row items-center mt-3 md:mt-4 gap-2">
                     <button className="
-                    text-white bg-white bg-opacity-30 rounded-md
+                    text-black bg-white bg-opacity-90 rounded-md
                     py-1 md:py-2
                     px-2 md:px-4
                     w-auto
-                    text-xs lg:text-lg
+                    text-s lg:text-lg
                     font-semibold
                     flex-row
                     flex
                     items-center
-                    hover:bg-opacity-20
+                    hover:bg-opacity-70
                     transition">
-                        < AiOutlineInfoCircle className="mr-1"/>
+                        < BsFillPlayFill/>
+                        Play
+                    </button>
+
+                    <button className="
+                    text-white rounded-md
+                    bg-gray-500
+                    bg-opacity-80
+                    py-1 md:py-2
+                    px-2 md:px-4
+                    w-auto
+                    text-s lg:text-lg
+                    font-semibold
+                    flex-row
+                    flex
+                    items-center
+                    hover:bg-opacity-50
+                    transition">
+                        < AiOutlineInfoCircle className="mr-0.5"/>
                         More Info
                     </button>
                 </div>
