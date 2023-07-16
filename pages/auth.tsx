@@ -68,7 +68,7 @@ const Auth = () => {
   }, [email, name, password, login]);
 
   return (
-    <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+    <div className="relative h-full w-full bg-[url('/images/hero.jpeg')] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
         <nav className="px-12 py-5">
           <img src="/images/logo.png" className="h-12" alt="Logo" />
@@ -85,7 +85,7 @@ const Auth = () => {
                   type="text"
                   label="Username"
                   value={name}
-                  onChange={(e: any) => setName(e.target.value)} 
+                  onChange={(e: any) => setName(e.target.value)}
                 />
               )}
               <Input
@@ -93,14 +93,14 @@ const Auth = () => {
                 type="email"
                 label="Email address or phone number"
                 value={email}
-                onChange={(e: any) => setEmail(e.target.value)} 
+                onChange={(e: any) => setEmail(e.target.value)}
               />
               <Input
-                type="password" 
-                id="password" 
-                label="Password" 
+                type="password"
+                id="password"
+                label="Password"
                 value={password}
-                onChange={(e: any) => setPassword(e.target.value)} 
+                onChange={(e: any) => setPassword(e.target.value)}
               />
             </div>
             <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
