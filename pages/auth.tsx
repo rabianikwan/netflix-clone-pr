@@ -5,7 +5,6 @@ import { getSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
-import { Checkbox } from "@material-tailwind/react";
 
 import Input from '@/components/Input';
 
@@ -107,25 +106,6 @@ const Auth = () => {
             <button onClick={variant === 'login' ? login : register} className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
               {variant === 'login' ? 'Login' : 'Sign up'}
             </button>
-            <div className="flex flex-row justify-between my-2">
-              <div className="flex flex-row justify-center items-center">
-              <input
-                  id="red-checkbox"
-                  type="checkbox"
-                  className="w-4 h-4 text-red-600
-                  bg-gray-100 border-gray-300 rounded focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
-              <label
-                  htmlFor="red-checkbox"
-                  className="ml-2 text-sm font-medium text-neutral-500 hover:text-gray-200"
-              >
-                Remember me
-              </label>
-              </div>
-                <div>
-                  <p className="hover:underline text-sm text-neutral-500">Need Help</p>
-                </div>
-            </div>
             <div className="flex flex-row items-center gap-4 mt-8 justify-center">
               <div onClick={() => signIn('google', { callbackUrl: '/profiles' })} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                 <FcGoogle size={32} />
@@ -134,21 +114,14 @@ const Auth = () => {
                 <FaGithub size={32} />
               </div>
             </div>
-
             <p className="text-neutral-500 mt-12">
-              {variant === 'login' ? 'New to Netflix?' : 'Already have an account?'}
+              {variant === 'login' ? 'First time using Netflix?' : 'Already have an account?'}
               <span onClick={toggleVariant} className="text-white ml-1 hover:underline cursor-pointer">
                 {variant === 'login' ? 'Create an account' : 'Login'}
               </span>
               .
             </p>
-
-            <div className="flex flex-row items-center gap-4 mt-8 mb-16 justify-center text-neutral-500 text-sm">
-              <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
-
-            </div>
           </div>
-
         </div>
       </div>
     </div>
